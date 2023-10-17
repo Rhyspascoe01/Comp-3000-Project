@@ -1,1 +1,5 @@
-# Comp-3000-Project
+# Comp-3000-Project -B.A,S.S or Bus Admin Scheduling System
+# Project Vision
+My vision for this project is to create an admin application for a bus company which will allow for a bus company to edit timetables to be accurate to the rate that a bus is travelling so a normal user is able to account for delays and cancellations for their journey. This would solve problems for both the bus company and the average commuter with the bus company being able to display delays in a timely manner which would allow for better communication between consumer and company as well as allowing for the consumer to just check the time table and see if the time had been changed which means that the  consumer would not be waiting for up to an hour for a bus to arrive. This project would be B.A,S.S and it is an application for performing admin action on bus time tables which allows for the admin to edit the times so that a delay can appear on the timetable, an example of this would be editing a 12:30 stop to be 12:40 as to display that the bus had been delayed by ten minutes, show if an entire timeslot has been cancelled entirely as well as any other delays or issues that would effect the routes.
+# Supervisor 
+Dr Martin Read
