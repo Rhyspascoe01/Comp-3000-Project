@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Bus Driver Editor";
+}
+<div class="text-center">
+    <h1 class="display-4">You are editing [BusDriverName]</h1>
+</div>
+<div class="container">
+    <div class="text-center">
+        <label for="OldName">Current Driver Name</label>
+        <p id="OldName">Driver Name</p>
+        <label for="OldDoB">Current Date of Birth</label>
+        <p id="OldDoB">01/03/2003</p>
+        <label for="OldRoutes">Current assigned routes(s)</label>
+        <p id="OldRoutes">Number 12</p>
+        <form>
+            <label for="NewName">New Name:</label>
+            <input type="text" id="NewName" name="NewName">
+        </form>
+        <form>
+            <label for="NewDoB">New Date of Birth:</label>
+            <input type="date" id="NewDoB" name="NewDoB">
+        </form>
+        <form>
+            <label for="NewRoutes">New Routes:</label>
+            <input type="text" id="NewRoutes" name="NewRoutes">
+        </form>
+        <a asp-area="" asp-controller="Home" asp-action="" class="btn btn-md btn-primary">Apply changes</a>
+        <a asp-area="" asp-controller="Home" asp-action="BusDriver" class="btn btn-md btn-primary">Go Back</a>
+    </div>
+</div>

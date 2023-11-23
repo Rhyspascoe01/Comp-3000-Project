@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Add Stop";
+}
+<div class="text-center">
+    <h1 class="display-4">Bus route</h1>
+    <p1>You are adding a new stop to Route</p1>
+    <p>Current time</p>
+    <form>
+        <label for="NewID">New stop ID</label>
+        <input type="number" id="NewID" name="NewID">
+    </form>
+    <form>
+        <label for="NewName">Insert New Time</label>
+        <input type="text" id="NewName" name="NewName">
+    </form>
+    <a asp-area="" asp-controller="Home" asp-action="" class="btn btn-md btn-primary">Add Stop</a>
+    <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Go Back</a>
+    
+</div>

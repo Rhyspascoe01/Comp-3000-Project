@@ -1,0 +1,44 @@
+﻿@model IEnumerable<B.A.S.S.Models.RouteController>
+@{
+    ViewData["Title"] = "Home Page";
+    string CheckName = "A";
+
+}
+<html>
+<div class="text-center">
+    <h1 class="display-4">Welcome to B.A.S.S</h1>
+    <p1>Please pick a route or view the drivers</p1>
+</div>
+<div class="container">
+    <div class="vertical-center">
+    <table>
+        <thead>
+            <tr>
+                <th>Routes</th>
+                <th>Route Number</th>
+            </tr>
+        </thead>
+        <tbody>
+         @foreach (var item in Model){
+          
+            if (CheckName != @item.RouteName)
+             {
+            <tr>
+            <td>@item.RouteDescription</td>
+            <td>@item.RouteNumber</td>
+            <td>
+                  <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary">View Timetable</a>
+                  <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Edit TimeTable</a>
+                </td>
+             </tr>
+                }
+                CheckName = @item.RouteName;
+                }
+        </tbody>
+    </table>
+        <a asp-area="" asp-controller="Home" asp-action="AddRoute" style=" width: 350px;" class="btn btn-md btn-primary"> Add New route</a>
+    </div>
+</div>
+<a asp-area="" asp-controller="Home" asp-action="BusDriver" style="left: 100%; position: absolute; top : 27%" class="btn btn-md btn-primary"> View bus drivers</a>
+
+</html>

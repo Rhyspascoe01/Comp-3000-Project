@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Add Route";
+}
+
+<div class="text-center">
+    <h1 class="display-4">You are adding a new route</h1>
+    <p1>Please pick a route or view the drivers</p1>
+    <form>
+        <label for="NewID">New stop ID</label>
+        <input type="number" id="NewID" name="NewID">
+    </form>
+     <form>
+        <label for="NewRouteNumber">New Route Number</label>
+        <input type="number" id="NewRouteNumber" name="NewRouteNumber">
+    </form>
+</div>
+<div class="container">
+    <table>
+        <thead>
+            <tr><
+                <th>STOPs</th>
+                <th>TimeFrames</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+                <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Add timeframe</a>
+         </tr>
+        </tbody>
+        <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary">Add stop</a>
+    </table>
+</div>

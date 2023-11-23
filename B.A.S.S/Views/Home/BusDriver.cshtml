@@ -1,0 +1,35 @@
+﻿@model IEnumerable<B.A.S.S.Models.BusController>
+
+@{
+    ViewData["Title"] = "Bus Driver";
+}
+<div class="text-center">
+    <h1 class="display-4">List of drivers</h1>
+</div>
+<div class="container">
+    <a  asp-area="" asp-controller="Home" asp-action="AddDriver" style="left: 50%; position: absolute;" class="btn btn-md btn-primary">Add Driver  </a>
+    <div class="vertical-center">
+        <table>
+            <thead>
+                 <tr><th>Name</th>
+                <th>Start of Shift</th>
+                <th>End of Shift</th>
+                <th>Buttons</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model){
+                <tr>
+                    <td>@item.BusDriverName</td>
+                    <td>@item.BusDriverStartShift</td>
+                    <td>@item.BusDriverEndShift</td>
+                    <td>
+                        <a a asp-area="" asp-controller="Home" asp-action="BusDriverEditor" class="btn btn-md btn-primary">Edit Driver  </a>
+                        <a a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Delete Driver  </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+</div>

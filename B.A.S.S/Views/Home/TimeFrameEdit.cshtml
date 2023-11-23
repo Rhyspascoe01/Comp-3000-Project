@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "TimeFrame Editor";
+}
+<div class="text-center">
+    <h1 class="display-4">Bus route</h1>
+    <p1>You are editing TIMEFRAME at STOP</p1>
+    <p>Current time</p>
+    <form>
+        <label for="New Time">Insert New Time</label>
+        <input type="text" id="NewTime" name="NewTime">
+    </form>
+    <label for=" TimeFrameChoices">Timeframe options</label>
+    <select name="TimeFrameChoices" id="TimeFrameChoices" style="width: 200px;">
+        <option value="placeholder">Please Select</option>
+        <option value="Cancelled">Cancelled</option>
+        <option value="Weather_delay">Weather delay</option>
+        <option value="Traffic_Delay">Traffic delay</option>
+        <option value="Bus_Driver_Delay">Bus Driver Delay</option>
+    </select> <br />
+    <a asp-area="" asp-controller="Home" asp-action="" class="btn btn-md btn-primary">Apply Edit</a>
+    <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Go Back</a>
+
+</div>

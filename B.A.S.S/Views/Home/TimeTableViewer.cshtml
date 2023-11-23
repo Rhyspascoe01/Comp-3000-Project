@@ -1,0 +1,48 @@
+﻿@model IEnumerable<B.A.S.S.Models.StopController>
+
+@{
+    ViewData["Title"] = "TimeTable Viewer";
+    string CheckName = "A";
+    
+}
+<div class="text-center">
+    <h1 class="display-4">Route @ViewData["RouteName"]</h1>
+
+    <p1> @ViewData["RouteDescription"]</p1>
+
+</div>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                  @foreach (var item in Model){
+                    <td>@item.RouteName</td>
+                    <td>@ViewData["ID"]</td>
+                }
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var item in Model){
+                    if (CheckName != @item.StopName)
+                {<tr>
+                   
+                        <td>@item.StopName</td>
+                          @foreach (var item2 in Model){
+                         if(item2.StopName == item.StopName)
+                         {
+                            <td>@item2.StopTime</td>
+
+       
+                         }
+                       }
+                 </tr>
+                       CheckName = @item.StopName;
+                
+                    }
+                  
+                }
+
+           
+        </tbody>
+    </table>
+</div>
