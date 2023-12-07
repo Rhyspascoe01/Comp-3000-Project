@@ -1,18 +1,19 @@
-﻿@{
+﻿@model IEnumerable<B.A.S.S.Models.StopController>
+@{
     ViewData["Title"] = "TimeTable Editor";
     string CheckName = "A";
 
 }
+
 <div class="text-center">
-    <h1 class="display-4">Route Name</h1>
-    <p1>Route Descripton</p1>
+    <h1 class="display-4">  @ViewData["Name"] </h1>
+    <p1>@ViewData["Description"]</p1>
 
 </div>
 <div class="container">
 
     <a asp-area="" asp-controller="Home" asp-action="StopAdder" class="btn btn-md btn-primary">Add stop</a>
     <a style="left: 50%; position: absolute;" asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">List of drivers on route</a>
-    <a style="left: 50%; position: absolute; top : 30%;" asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Delete Route</a>
     <table>
         <thead>
         <tr>
@@ -26,8 +27,7 @@
         <tbody>
             @foreach (var item in Model)
             {
-                if (ViewData["ID"] == @item.RouteID)
-                {
+              
                     if (CheckName != @item.StopName)
                     {
                         <tr>
@@ -39,7 +39,7 @@
                                 {
                                     <td>
                                         @item2.StopTime
-                                        <a asp-area="" asp-controller="Home" asp-action="TimeFrameEdit" class="btn btn-md btn-primary">Edit Timeslot</a>
+                                    <a asp-area="" asp-controller="Home" asp-action="TimeFrameEdit" class="btn btn-md btn-primary" asp-route-id="@item2.ID">Edit Timeslot</a>
                                     </td>
 
 
@@ -51,7 +51,7 @@
 
                     }
                 }
-            }
+            
 
         </tbody>
     </table>

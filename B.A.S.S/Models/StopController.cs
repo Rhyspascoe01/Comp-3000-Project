@@ -11,8 +11,8 @@ namespace B.A.S.S.Models
     public class StopController
     {
         [Key]
-        [Column("StopID")]
-        public int StopID { get; set; }
+        [Column("ID")]
+        public int ID { get; set; }
 
         [NotMapped]
         public bool Valid { get; set; }

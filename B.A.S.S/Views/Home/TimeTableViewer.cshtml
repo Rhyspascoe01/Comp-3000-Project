@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<B.A.S.S.Models.StopController>
-
 @{
     ViewData["Title"] = "TimeTable Viewer";
     string CheckName = "A";
     
 }
 <div class="text-center">
-    <h1 class="display-4">Route @ViewData["RouteName"]</h1>
+    <h1 class="display-4">Route </h1>
 
-    <p1> @ViewData["RouteDescription"]</p1>
+    <p1></p1>
 
 </div>
 <div class="container">
@@ -17,7 +16,6 @@
             <tr>
                   @foreach (var item in Model){
                     <td>@item.RouteName</td>
-                    <td>@ViewData["ID"]</td>
                 }
             </tr>
         </thead>

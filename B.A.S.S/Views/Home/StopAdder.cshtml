@@ -1,19 +1,30 @@
-﻿@{
+﻿@model B.A.S.S.Models.StopController
+
+@{
     ViewData["Title"] = "Add Stop";
 }
-<div class="text-center">
+@using (Html.BeginForm()){
+    <div class="text-center">
     <h1 class="display-4">Bus route</h1>
     <p1>You are adding a new stop to Route</p1>
     <p>Current time</p>
-    <form>
-        <label for="NewID">New stop ID</label>
-        <input type="number" id="NewID" name="NewID">
-    </form>
-    <form>
-        <label for="NewName">Insert New Time</label>
-        <input type="text" id="NewName" name="NewName">
-    </form>
-    <a asp-area="" asp-controller="Home" asp-action="" class="btn btn-md btn-primary">Add Stop</a>
+      <p  class = "form-control">  <label>New stop ID</label>
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+        </p>
+        <p class="form-control">
+        <label >Insert Route ID</label>
+            @Html.TextBoxFor(x => x.RouteID, new {@class = "form-control"  })
+    </p>
+        <p class="form-control">
+        <label>Insert Stop Name</label>
+            @Html.TextBoxFor(x => x.StopName, new {@class = "form-control"  })
+    </p>
+        <p class="form-control">
+        <label>Insert New Time</label>
+            @Html.TextBoxFor(x => x.StopTime, new {@class = "form-control"  })
+    </p>
+        <button type="submit" >Add Stop</button>
     <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Go Back</a>
-    
-</div>
+    </div>
+ }
+

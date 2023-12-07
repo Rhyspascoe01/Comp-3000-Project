@@ -1,14 +1,29 @@
-﻿@{
+﻿@model B.A.S.S.Models.StopController
+@{
     ViewData["Title"] = "TimeFrame Editor";
 }
+@using (Html.BeginForm()){
+
 <div class="text-center">
-    <h1 class="display-4">Bus route</h1>
-    <p1>You are editing TIMEFRAME at STOP</p1>
-    <p>Current time</p>
-    <form>
-        <label for="New Time">Insert New Time</label>
-        <input type="text" id="NewTime" name="NewTime">
-    </form>
+        <p><h1 class="display-4">Bus route</h1></p>
+        <p> <p1>You are editing @ViewData["Time"]  at @ViewData["Name"]</p1>
+        <p>
+            <label for="New Time">Insert ID</label>
+            <input type="number" id="NewTime" name="NewTime" asp-for="ID">
+        </p>
+        <p>
+            <label for="New Time">Insert Route ID</label>
+            <input type="number" id="NewTime" name="NewTime" asp-for="RouteID">
+        </p>
+        <p>
+            <label for="New Time">Insert New Time</label>
+        <p class="form-control">
+            <label>New stop ID</label>
+           @Html.TextBoxFor(x => x.StopTime, new { })
+        </p>
+
+        </p>
+  
     <label for=" TimeFrameChoices">Timeframe options</label>
     <select name="TimeFrameChoices" id="TimeFrameChoices" style="width: 200px;">
         <option value="placeholder">Please Select</option>
@@ -17,7 +32,79 @@
         <option value="Traffic_Delay">Traffic delay</option>
         <option value="Bus_Driver_Delay">Bus Driver Delay</option>
     </select> <br />
-    <a asp-area="" asp-controller="Home" asp-action="" class="btn btn-md btn-primary">Apply Edit</a>
-    <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Go Back</a>
+    <button type="submit" class="btn btn-md btn-primary" >Apply Edit</button>
+        <a asp-area="" asp-controller="Home" asp-action="TimeFrameEditor" class="btn btn-md btn-primary" asp-route-id="StopID">Go Back</a>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                }
 
+                .modal {
+                    display: none; 
+                    position: fixed; 
+                    z-index: 1; /* Sit on top */
+                    padding-top: 100px; /* Location of the box */
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* Full width */
+                    height: 100%; /* Full height */
+                    overflow: auto; /* Enable scroll if needed */
+                    background-color: rgb(0,0,0); /* Fallback color */
+                    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                }
+
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: auto;
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 80%;
+                }
+
+                .close {
+                    color: #aaaaaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+
+                    .close:hover,
+                    .close:focus {
+                        color: #000;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+            </style>
+        </head>
+        <body>
+            <button class="btn btn-md btn-primary" id="myBtn">Delete Stop</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <H1>ARE YOU SURE YOU WANT TO DELETE THIS STOP?</H1>
+                    <p><button type="submit">Yes</button><button type="submit">NO</button></p>
+                </div>
+            </div>
+            <script>
+                var modal = document.getElementById("myModal");
+                var btn = document.getElementById("myBtn");
+                var span = document.getElementsByClassName("close")[0];
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+        </body>
+    </html>
 </div>
+}
