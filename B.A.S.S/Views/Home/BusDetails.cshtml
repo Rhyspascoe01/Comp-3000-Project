@@ -1,0 +1,30 @@
+﻿@model IEnumerable<B.A.S.S.Models.BusController>
+@{
+    ViewData["Title"] = "Your Details";
+}
+<div class="text-center">
+    <h1 class="display-4">Your details</h1>
+</div>
+<div class="container">
+    <div class="vertical-center">
+        <table>
+            <thead>
+                 <tr><th>Name</th>
+                <th>Start of Shift</th>
+                <th>End of Shift</th>
+                <th>Buttons</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.BusDriverName</td>
+                        <td>@item.BusDriverStartShift</td>
+                        <td>@item.BusDriverEndShift</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+</div>

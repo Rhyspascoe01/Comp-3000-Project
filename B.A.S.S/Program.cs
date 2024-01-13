@@ -17,6 +17,10 @@ options.UseSqlServer($"Server={server};Initial Catalog={database};User ID={user}
 builder.Services.AddDbContext<BusContext>(options =>
 options.UseSqlServer($"Server={server};Initial Catalog={database};User ID={user};Password={pwd}; TrustServerCertificate = True;"));
 
+builder.Services.AddDbContext<AccountContext>(options =>
+options.UseSqlServer($"Server={server};Initial Catalog={database};User ID={user};Password={pwd}; TrustServerCertificate = True;"));
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -39,6 +43,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=LogInPage}/{id?}");
 
 app.Run();

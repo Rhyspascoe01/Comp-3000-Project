@@ -1,32 +1,27 @@
-﻿@{
+﻿@model B.A.S.S.Models.RouteController
+@{
     ViewData["Title"] = "Add Route";
 }
-
+@using (Html.BeginForm()){
 <div class="text-center">
     <h1 class="display-4">You are adding a new route</h1>
-    <p1>Please pick a route or view the drivers</p1>
-    <form>
-        <label for="NewID">New stop ID</label>
-        <input type="number" id="NewID" name="NewID">
-    </form>
-     <form>
-        <label for="NewRouteNumber">New Route Number</label>
-        <input type="number" id="NewRouteNumber" name="NewRouteNumber">
-    </form>
+        <p class="form-control">
+            <label>Insert Route ID</label>
+            @Html.TextBoxFor(x => x.RouteID, new {@class = "form-control"  })
+        </p>
+        <p class="form-control">
+            <label>Insert Route Name</label>
+            @Html.TextBoxFor(x => x.RouteName, new {@class = "form-control"  })
+        </p>
+        <p class="form-control">
+            <label>Insert New number</label>
+            @Html.TextBoxFor(x => x.RouteNumber, new {@class = "form-control"  })
+        </p>
+         <p class="form-control">
+                <label>Insert New number</label>
+            @Html.TextBoxFor(x => x.RouteDescription, new {@class = "form-control"  })
+          </p>
 </div>
-<div class="container">
-    <table>
-        <thead>
-            <tr><
-                <th>STOPs</th>
-                <th>TimeFrames</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-                <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Add timeframe</a>
-         </tr>
-        </tbody>
-        <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary">Add stop</a>
-    </table>
-</div>
+<button  class="btn btn-md btn-primary" type="submit" >Add Stop</button>
+<a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-md btn-primary">Go Back</a>
+}

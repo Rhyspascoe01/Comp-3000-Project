@@ -27,7 +27,7 @@
             <td>@item.RouteDescription</td>
             <td>@item.RouteNumber</td>
             <td>
-                  <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary">View Timetable</a>
+                  <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary" asp-route-id="@item.RouteID">View Timetable</a>
                   <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary" asp-route-id="@item.RouteID">Edit TimeTable</a>
                                 <html>
                                 <head>
@@ -75,13 +75,18 @@
                                 </head>
                                 <body>
                                     <button class="btn btn-md btn-primary" id="myBtn">Delete Route</button>
+                                    @using (Html.BeginForm())
+                                    {
+
                                     <div id="myModal" class="modal">
                                         <div class="modal-content">
                                             <span class="close">&times;</span>
                                             <H1>ARE YOU SURE YOU WANT TO DELETE THIS ROUTE?</H1>
                                             <p><button type="submit">Yes</button></p>
+                                            <p><button type="submit">No</button></p>
                                         </div>
                                     </div>
+                                    }
                                     <script>
                                         var modal = document.getElementById("myModal");
                                         var btn = document.getElementById("myBtn");
@@ -108,8 +113,8 @@
         </tbody>
     </table>
         <a asp-area="" asp-controller="Home" asp-action="AddRoute" style=" width: 350px;" class="btn btn-md btn-primary"> Add New route</a>
+        <a asp-area="" asp-controller="Home" asp-action="BusDriver" class="btn btn-md btn-primary"> View bus drivers</a>
     </div>
 </div>
-<a asp-area="" asp-controller="Home" asp-action="BusDriver" style="left: 100%; position: absolute; top : 27%" class="btn btn-md btn-primary"> View bus drivers</a>
 
 </html>

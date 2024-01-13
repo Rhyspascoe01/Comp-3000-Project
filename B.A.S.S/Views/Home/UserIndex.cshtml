@@ -1,0 +1,36 @@
+﻿@model IEnumerable<B.A.S.S.Models.RouteController>
+@{
+    ViewData["Title"] = "Home Page";
+    string CheckName = "A";
+
+}
+<html>
+<div class="text-center">
+    <h1 class="display-4">Welcome to B.A.S.S</h1>
+    <p1>Please pick a route or view the drivers</p1>
+</div>
+<div class="container">
+    <div class="vertical-center">
+    <table>
+        <thead>
+            <tr>
+                <th>Routes</th>
+                <th>Route Number</th>
+            </tr>
+        </thead>
+        <tbody>
+         @foreach (var item in Model){
+          
+            if (CheckName != @item.RouteName)
+             {
+            <tr>
+            <td>@item.RouteDescription</td>
+            <td>@item.RouteNumber</td>
+                            <td> <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary" asp-route-id="@item.RouteID">View Timetable</a></td>
+                 </tr>
+                    }
+                    CheckName = @item.RouteName;
+                }
+        </tbody>
+            <a asp-area="" asp-controller="Home" asp-action="LogInPage" class="btn btn-md btn-primary"> Log in</a>
+    </table>

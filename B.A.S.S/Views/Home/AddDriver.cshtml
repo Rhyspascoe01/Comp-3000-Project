@@ -1,24 +1,40 @@
-﻿@{
+﻿@model B.A.S.S.Models.BusController
+@{
     ViewData["Title"] = "Add Driver";
 }
+@using (Html.BeginForm()){
+
 <div class="text-center">
     <h1 class="display-4">Add New Driver</h1>
 </div>
 <div class="container">
     <div class="text-center">
-        <form>
+            <p class="form-control">
+                <label for="NewName">New ID:</label>
+                @Html.TextBoxFor(x => x.BusDriverID, new {@class = "form-control" })
+            </p>
+             <p class="form-control">
+                <label for="NewName">New Route ID:</label>
+                @Html.TextBoxFor(x => x.RouteID, new {@class = "form-control" })
+            </p>
+            <p class="form-control">
             <label for="NewName">New Name:</label>
-            <input type="text" id="NewName" name="NewName">
-        </form>
-        <form>
+                @Html.TextBoxFor(x => x.BusDriverName, new {@class = "form-control" })
+        </p>
+        <p class = "form-control">
             <label for="NewDoB">New Date of Birth:</label>
-            <input type="date" id="NewDoB" name="NewDoB">
-        </form>
-        <form>
-            <label for="NewRoutes">New Routes:</label>
-            <input type="text" id="NewRoutes" name="NewRoutes">
-        </form>
-        <a asp-area="" asp-controller="Home" asp-action="" class="btn btn-md btn-primary">Add driver</a>
+                @Html.TextBoxFor(x => x.BusDriverDOB, new { @class = "form-control"})
+        </p>
+            <p class="form-control">
+            <label for="NewRoutes">New Start Shift:</label>
+                @Html.TextBoxFor(x => x.BusDriverStartShift, new { @class = "form-control"})
+        </p>
+            <p class="form-control">
+                <label for="NewRoutes">New End Shift:</label>
+                @Html.TextBoxFor(x => x.BusDriverStartShift, new { @class = "form-control"})
+            </p>
+        <button type="submit" class="btn btn-md btn-primary">Add driver</button>
         <a asp-area="" asp-controller="Home" asp-action="BusDriver" class="btn btn-md btn-primary">Go Back</a>
     </div>
 </div>
+}

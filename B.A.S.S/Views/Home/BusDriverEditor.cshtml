@@ -1,30 +1,68 @@
-﻿@{
+﻿@model B.A.S.S.Models.BusController
+@{
     ViewData["Title"] = "Bus Driver Editor";
 }
+@using (Html.BeginForm()){
+
 <div class="text-center">
     <h1 class="display-4">You are editing [BusDriverName]</h1>
 </div>
 <div class="container">
     <div class="text-center">
-        <label for="OldName">Current Driver Name</label>
-        <p id="OldName">Driver Name</p>
-        <label for="OldDoB">Current Date of Birth</label>
-        <p id="OldDoB">01/03/2003</p>
-        <label for="OldRoutes">Current assigned routes(s)</label>
-        <p id="OldRoutes">Number 12</p>
-        <form>
+            <p class="form-control">
             <label for="NewName">New Name:</label>
-            <input type="text" id="NewName" name="NewName">
-        </form>
-        <form>
+             @Html.TextBoxFor(x => x.BusDriverID, new { @class = "form-control" })
+        </p>
+            <p class="form-control">
             <label for="NewDoB">New Date of Birth:</label>
-            <input type="date" id="NewDoB" name="NewDoB">
-        </form>
-        <form>
-            <label for="NewRoutes">New Routes:</label>
-            <input type="text" id="NewRoutes" name="NewRoutes">
-        </form>
-        <a asp-area="" asp-controller="Home" asp-action="" class="btn btn-md btn-primary">Apply changes</a>
+                @Html.TextBoxFor(x => x.BusDriverDOB, new { @class = "form-control" })
+        </p>
+            <p class="form-control">
+            <label for="NewRoutes">New Start Shift:</label>
+             @Html.TextBoxFor(x => x.BusDriverStartShift, new { @class = "form-control" })
+        </p>
+            <p class="form-control">
+                <label for="NewRoutes">New Start Shift:</label>
+                @Html.TextBoxFor(x => x.BusDriverEndShift, new { @class = "form-control" })
+         </p>
+            <button type="submit" class="btn btn-md btn-primary">Apply changes</button>
         <a asp-area="" asp-controller="Home" asp-action="BusDriver" class="btn btn-md btn-primary">Go Back</a>
     </div>
+</div>
+}
+<button class="btn btn-md btn-primary" id="myBtn">Delete Stop</button>
+
+@using (Html.BeginForm("BusDriverDelete", "Home", FormMethod.Post))
+{
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <H1>ARE YOU SURE YOU WANT TO DELETE THIS DRIVER?</H1>
+            <p class="form-control">
+                <label for="New Time">DRIVER ID</label>
+                @Html.TextBoxFor(x => x.BusDriverID, new { @class = "form-control" })
+            </p>
+            <p><button class="btn btn-md btn-primary" type="submit">Delete ID </button></p>
+        </div>
+    </div>
+}
+    </div>
+    }
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
 </div>

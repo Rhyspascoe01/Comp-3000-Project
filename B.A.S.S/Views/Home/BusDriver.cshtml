@@ -24,8 +24,7 @@
                     <td>@item.BusDriverStartShift</td>
                     <td>@item.BusDriverEndShift</td>
                     <td>
-                        <a a asp-area="" asp-controller="Home" asp-action="BusDriverEditor" class="btn btn-md btn-primary">Edit Driver  </a>
-                        <a a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary">Delete Driver  </a>
+                        <a a asp-area="" asp-controller="Home" asp-action="BusDriverEditor" class="btn btn-md btn-primary" asp-route-id="@item.BusDriverID">Edit Driver  </a>
                     </td>
                 </tr>
                 }

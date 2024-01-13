@@ -1,0 +1,23 @@
+﻿@model B.A.S.S.Models.AccountController
+@using (Html.BeginForm()){
+
+<div class="text-center">
+    <h1 class="display-4">Please log in</h1>
+    <p>Or click the link if you are just a user</p>
+</div>
+
+<div class="container">
+    <div class="text-center">
+         <p class="form-control">
+            <label for="NewName">UserName:</label>
+             @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+        </p>
+            <p class="form-control">
+            <label for="NewPassword">Password:</label>
+             @Html.TextBoxFor(x => x.Passwords, new { @class = "form-control" })
+        </p>
+        <button type="submit" class="btn btn-md btn-primary">Log in</button>
+        <a asp-area="" asp-controller="Home" asp-action="UserIndex" class="btn btn-md btn-primary">Click here to view timetables</a>
+   </div>
+ </div>
+};
