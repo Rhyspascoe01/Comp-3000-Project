@@ -18,6 +18,7 @@
         </p>
         <button type="submit" class="btn btn-md btn-primary">Log in</button>
         <a asp-area="" asp-controller="Home" asp-action="UserIndex" class="btn btn-md btn-primary">Click here to view timetables</a>
+            <p>@TempData["ErrorString"]</p>
    </div>
  </div>
 };

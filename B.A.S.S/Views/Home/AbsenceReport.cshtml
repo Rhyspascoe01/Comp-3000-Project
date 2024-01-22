@@ -1,0 +1,19 @@
+﻿@model B.A.S.S.Models.StopController
+@{
+    ViewData["Title"] = "Report a Absence";
+}
+@using (Html.BeginForm()){
+<div class="text-center">
+    <h1 class="display-4">Please Report your Absence here.</h1>
+    <p>In order for us to accuratly portray your absence please insert what route you have been assigned too.</p>
+</div>
+<div class="container">
+    <div class="text-center">
+       <p class="form-control">
+        <label >Insert Route ID</label>
+            @Html.TextBoxFor(x => x.ID, new {@class = "form-control"  })
+         </p>
+      <button  class="btn btn-md btn-primary" type="submit" >Add Stop</button>
+    </div>
+</div>
+}

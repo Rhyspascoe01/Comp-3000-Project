@@ -16,6 +16,7 @@
             <tr>
                 <th>Routes</th>
                 <th>Route Number</th>
+                <th>This bus is late by</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
             <tr>
             <td>@item.RouteDescription</td>
             <td>@item.RouteNumber</td>
+            <td>@item.LateTime minutes</td>
             <td>
                   <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary" asp-route-id="@item.RouteID">View Timetable</a>
                   <a asp-area="" asp-controller="Home" asp-action="TimeTableEditor" class="btn btn-md btn-primary" asp-route-id="@item.RouteID">Edit TimeTable</a>
@@ -114,7 +116,8 @@
     </table>
         <a asp-area="" asp-controller="Home" asp-action="AddRoute" style=" width: 350px;" class="btn btn-md btn-primary"> Add New route</a>
         <a asp-area="" asp-controller="Home" asp-action="BusDriver" class="btn btn-md btn-primary"> View bus drivers</a>
-    </div>
+        <a asp-area="" asp-controller="Home" asp-action="LogInPage" class="btn btn-md btn-primary"> Log out</a>
+     </div>
 </div>
 
 </html>

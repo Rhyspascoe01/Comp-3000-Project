@@ -3,7 +3,7 @@
     ViewData["Title"] = "Your Details";
 }
 <div class="text-center">
-    <h1 class="display-4">Your details</h1>
+    <h1 class="display-4">Welcome to Bass, @TempData["DriverName"]</h1>
 </div>
 <div class="container">
     <div class="vertical-center">
@@ -12,7 +12,6 @@
                  <tr><th>Name</th>
                 <th>Start of Shift</th>
                 <th>End of Shift</th>
-                <th>Buttons</th>
             </tr>
             </thead>
             <tbody>
@@ -22,9 +21,13 @@
                         <td>@item.BusDriverName</td>
                         <td>@item.BusDriverStartShift</td>
                         <td>@item.BusDriverEndShift</td>
+                        <a asp-area="" asp-controller="Home" asp-action="AbsenceReport" class="btn btn-md btn-primary">Report Absence</a>
+                        <a asp-area="" asp-controller="Home" asp-action="IncidentReporter" class="btn btn-md btn-primary">Report A Incident</a>
+
                     </tr>
-                }
+                    }
             </tbody>
         </table>
+        <a asp-area="" asp-controller="Home" asp-action="BusIndex" class="btn btn-md btn-primary">Go To TimeTables</a>
         </div>
 </div>

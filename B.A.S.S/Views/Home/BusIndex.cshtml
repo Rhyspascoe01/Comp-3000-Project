@@ -6,7 +6,7 @@
 }
 <html>
 <div class="text-center">
-    <h1 class="display-4">Welcome to B.A.S.S, @ViewData["Name"]</h1>
+    <h1 class="display-4">Welcome to the TimeTable Viewer </h1>
     <p1>Please pick a route or view the drivers</p1>
 </div>
 <div class="container">
@@ -16,6 +16,7 @@
                 <tr>
                     <th>Routes</th>
                     <th>Route Number</th>
+                    <th>This bus is late by</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,11 +28,14 @@
                         <tr>
                             <td>@item.RouteDescription</td>
                             <td>@item.RouteNumber</td>
-                            <td> <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary">View Timetable</a></td>
+                            <td>@item.LateTime minutes</td>
+                            <td> <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary" asp-route-id="@item.RouteID">View Timetable</a></td>
                         </tr>
                     }
                     CheckName = @item.RouteName;
                 }
             </tbody>
             <a asp-area="" asp-controller="Home" asp-action="BusDetails" class="btn btn-md btn-primary" asp-route-id ="@ViewData["Name"]">Check Own Details</a>
+            <a asp-area="" asp-controller="Home" asp-action="AbsenceReport" class="btn btn-md btn-primary">Report Absence</a>
+            <a asp-area="" asp-controller="Home" asp-action="IncidentReporter" class="btn btn-md btn-primary">Report A Incident</a>
         </table>

@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\pasco\source\repos\B.A.S.S\B.A.S.S
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/AbsenceReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYnNlbmNlUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/AddDriver.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGREcml2ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/BusIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCdXNJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/IncidentReporter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmNpZGVudFJlcG9ydGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/Index.cshtml]
