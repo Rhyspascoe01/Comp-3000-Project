@@ -1,0 +1,17 @@
+﻿@model B.A.S.S.Models.StopController
+@{
+    ViewData["Title"] = "TimeFrame Deletor";
+}
+@using (Html.BeginForm())
+{
+    <div class="text-center">
+        <h1 class="display-4">You are Deleting a route</h1>
+        <p class="form-control">
+            <label>Insert Route ID</label>
+            @Html.TextBoxFor(x => x.RouteID, new {@class = "form-control"  })
+        </p>
+        
+    </div>
+    <button class="btn btn-md btn-primary" type="submit">Delete Route</button>
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-md btn-primary">Go Back</a>
+}

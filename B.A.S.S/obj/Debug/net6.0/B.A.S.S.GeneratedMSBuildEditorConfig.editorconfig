@@ -9,93 +9,109 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = B.A.S.S
 build_property.RootNamespace = B.A.S.S
-build_property.ProjectDir = C:\Users\pasco\source\repos\B.A.S.S\B.A.S.S\
+build_property.ProjectDir = C:\Users\pasco\Comp-3000-Project\B.A.S.S\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\pasco\source\repos\B.A.S.S\B.A.S.S
+build_property.MSBuildProjectDirectory = C:\Users\pasco\Comp-3000-Project\B.A.S.S
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/AbsenceReport.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/AbsenceReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYnNlbmNlUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/AddDriver.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/AddDriver.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGREcml2ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/AddRoute.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/AddRoute.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRSb3V0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/BusDetails.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/Alerts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbGVydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/BusDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCdXNEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/BusDriver.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/BusDriver.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCdXNEcml2ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/BusDriverEditor.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/BusDriverEditor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCdXNEcml2ZXJFZGl0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/BusIndex.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/BusIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCdXNJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/IncidentReporter.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/IncidentReporter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmNpZGVudFJlcG9ydGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/Index.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/LogInPage.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/LogInPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dJblBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/Privacy.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/StopAdder.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/SearchIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2hJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/StopAdder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdG9wQWRkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/TimeFrameEdit.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/TimeFrameEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW1lRnJhbWVFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/TimeTableEditor.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/TimeTableDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW1lVGFibGVEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/TimeTableEditor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW1lVGFibGVFZGl0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/TimeTableViewer.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/TimeTableViewer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW1lVGFibGVWaWV3ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Home/UserIndex.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Home/UserIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VySW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Shared/Error.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/_ViewImports.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/_ViewStart.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pasco/source/repos/B.A.S.S/B.A.S.S/Views/Shared/_Layout.cshtml]
+[C:/Users/pasco/Comp-3000-Project/B.A.S.S/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jtrjb2dqmz

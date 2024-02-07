@@ -9,14 +9,17 @@
     <h1 class="display-4">Welcome to B.A.S.S</h1>
     <p1>Please pick a route or view the drivers</p1>
 </div>
+
+<a asp-area="" asp-controller="Home" asp-action="UserIndex" asp-route-id="@ViewData["Switch"]" class="btn btn-md btn-primary"> Switch to @ViewData["Direction"] routes</a>
 <div class="container">
     <div class="vertical-center">
     <table>
         <thead>
             <tr>
-                <th>Routes</th>
                 <th>Route Number</th>
+                <th>Routes</th>
                 <th>This bus is late by</th>
+                <th>Day schedule</th>
             </tr>
         </thead>
         <tbody>
@@ -25,9 +28,10 @@
             if (CheckName != @item.RouteName)
              {
             <tr>
+            <td style="background-color : @item.Colour ">@item.RouteNumber</td>
             <td>@item.RouteDescription</td>
-            <td>@item.RouteNumber</td>
             <td>@item.LateTime minutes</td>
+            <td>@item.RunningSummary</td>
                             <td> <a asp-area="" asp-controller="Home" asp-action="TimeTableViewer" class="btn btn-md btn-primary" asp-route-id="@item.RouteID">View Timetable</a></td>
                  </tr>
                     }

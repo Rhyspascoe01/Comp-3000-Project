@@ -4,12 +4,6 @@
     string CheckName = "A";
 
 }
-<html>
-<div class="text-center">
-    <h1 class="display-4">Welcome to the TimeTable Viewer </h1>
-    <p1>Please pick a route or view the drivers</p1>
-</div>
-<a asp-area="" asp-controller="Home" asp-action="BusIndex" asp-route-id="@ViewData["Switch"]" class="btn btn-md btn-primary"> Switch to @ViewData["Direction"] routes</a>
 <div class="container">
     <div class="vertical-center">
         <table>
@@ -38,7 +32,5 @@
                     CheckName = @item.RouteName;
                 }
             </tbody>
-            <a asp-area="" asp-controller="Home" asp-action="BusDetails" class="btn btn-md btn-primary" asp-route-id ="@ViewData["Name"]">Check Own Details</a>
-            <a asp-area="" asp-controller="Home" asp-action="AbsenceReport" class="btn btn-md btn-primary">Report Absence</a>
-            <a asp-area="" asp-controller="Home" asp-action="IncidentReporter" class="btn btn-md btn-primary">Report A Incident</a>
+            <a asp-area="" asp-controller="Home" asp-action="LogInPage" class="btn btn-md btn-primary"> Log in</a>
         </table>

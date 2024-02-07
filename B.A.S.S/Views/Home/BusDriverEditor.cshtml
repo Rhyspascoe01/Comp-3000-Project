@@ -30,7 +30,7 @@
     </div>
 </div>
 }
-<button class="btn btn-md btn-primary" id="myBtn">Delete Stop</button>
+<button class="btn btn-md btn-primary" id="myBtn">Delete Driver</button>
 
 @using (Html.BeginForm("BusDriverDelete", "Home", FormMethod.Post))
 {
@@ -42,7 +42,7 @@
                 <label for="New Time">DRIVER ID</label>
                 @Html.TextBoxFor(x => x.BusDriverID, new { @class = "form-control" })
             </p>
-            <p><button class="btn btn-md btn-primary" type="submit">Delete ID </button></p>
+            <p><button class="btn btn-md btn-primary" type="submit">Delete</button></p>
         </div>
     </div>
 }

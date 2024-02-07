@@ -1,0 +1,13 @@
+﻿@model B.A.S.S.Models.StopController
+@{
+    
+    ViewData["Title"] = "Home Page";
+    string CheckName = "A";
+
+}
+@using (Html.BeginForm())
+{
+     <H1>Search</H1>
+    <p>Type the name of your local stop and see what routes it appears in : </p> @Html.TextBoxFor(x => x.StopName, new { @class = "form-control" })  <button  class="btn btn-md btn-primary" type="submit" >Search stop</button>
+
+}

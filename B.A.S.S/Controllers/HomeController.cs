@@ -19,8 +19,8 @@ namespace B.A.S.S.Controllers
         private readonly StopContext _contexttwo;
         private readonly BusContext _contextthree;
         private readonly AccountContext _contextfour;
-        string Usernametransfer;
         double StopChangeTwo;
+        string none = "none";
         public HomeController(ILogger<HomeController> logger, RouteContexts context, StopContext contexttwo, BusContext contextthree, AccountContext contextfour)
         {
             _logger = logger;
@@ -31,20 +31,58 @@ namespace B.A.S.S.Controllers
         }
 
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
 
-            return View(await _context.RouteController.ToListAsync());
+            if (id == 0 )
+            {
+                ViewData["Switch"] = 1;
+                ViewData["Direction"] = "Southbound";
+                return View(await _context.RouteController.Where(i => i.RouteDirection == "North").ToListAsync());
+            }
+            else
+            {
+                ViewData["Switch"] = 0;
+                ViewData["Direction"] = "NorthBound";
+                return View(await _context.RouteController.Where(i => i.RouteDirection == "South").ToListAsync());
+            }
         }
-        public async Task<IActionResult> UserIndex()
+       
+        public async Task<IActionResult> UserIndex(int id)
         {
 
-            return View(await _context.RouteController.ToListAsync());
+            if (id == 0)
+            {
+                ViewData["Switch"] = 1;
+                ViewData["Direction"] = "Southbound";
+                return View(await _context.RouteController.Where(i => i.RouteDirection == "North").ToListAsync());
+            }
+            else
+            {
+                ViewData["Switch"] = 0;
+                ViewData["Direction"] = "NorthBound";
+                return View(await _context.RouteController.Where(i => i.RouteDirection == "South").ToListAsync());
+            }
         }
-        public async Task<IActionResult> BusIndex()
+        public async Task<IActionResult> TimeTableDelete()
         {
 
-            return View(await _context.RouteController.ToListAsync());
+            return View();
+        }
+        public async Task<IActionResult> BusIndex(int id)
+        {
+            if (id == 0)
+            {
+                ViewData["Switch"] = 1;
+                ViewData["Direction"] = "Southbound";
+                return View(await _context.RouteController.Where(i => i.RouteDirection == "North").ToListAsync());
+            }
+            else
+            {
+                ViewData["Switch"] = 0;
+                ViewData["Direction"] = "NorthBound";
+                return View(await _context.RouteController.Where(i => i.RouteDirection == "South").ToListAsync());
+            }
         }
         public async Task<IActionResult> TimeTableViewer(int ID)
         {
@@ -55,10 +93,12 @@ namespace B.A.S.S.Controllers
                 {
                     RouteName = TimeTable.RouteName,
                     RouteNumber = TimeTable.RouteNumber,
+                    Colour = TimeTable.Colour,
 
                 };
                 @ViewData["Number"] = TimeTable.RouteNumber;
                 @ViewData["Name"] = TimeTable.RouteName;
+                @ViewData["Colour"] = TimeTable.Colour;
             }
 
             return View(await _contexttwo.Stops.Where(i => i.RouteID == ID).ToListAsync());
@@ -72,10 +112,12 @@ namespace B.A.S.S.Controllers
                 var Model = new RouteController()
                 {
                     RouteName = TimeTable.RouteName,
-                    RouteDescription = TimeTable.RouteDescription
+                    RouteDescription = TimeTable.RouteDescription,
+                       Colour = TimeTable.Colour,
                 };
                 ViewData["Name"] = TimeTable.RouteName;
                 ViewData["Description"] = TimeTable.RouteDescription;
+                @ViewData["Colour"] = TimeTable.Colour;
             }
 
             return View(await _contexttwo.Stops.Where(i => i.RouteID == id).ToListAsync());
@@ -129,9 +171,10 @@ namespace B.A.S.S.Controllers
             if (TimeFrames != null)
             {
                 double StopChange = EditModel.StopTime - TimeFrames.StopTime;
-                TimeFrames.StopTime = EditModel.StopTime;
+                StopChange = Math.Round(StopChange, 2);
+                TimeFrames.StopTime = Math.Round(EditModel.StopTime, 2);
                 double Latetime = StopChange * 100;
-                RouteFrame.LateTime = RouteFrame.LateTime + Latetime;
+                RouteFrame.LateTime = RouteFrame.LateTime + Math.Round(Latetime);
                 while (TimeFrames != null)
                 {
                     EditModel.ID += 1;
@@ -142,9 +185,11 @@ namespace B.A.S.S.Controllers
                         if (IDStore == IDstore2)
                         {
                             TimeFrames.StopTime += StopChange;
+                            TimeFrames.StopTime = Math.Round(TimeFrames.StopTime, 2);
                             for (int i = 0; i < 22; i++)
                             {
                                 double itwo = i + 0.59;
+                               itwo=  Math.Round(itwo, 2);
                                 if (TimeFrames.StopTime > itwo && TimeFrames.StopTime < i + 1)
                                 {
 
@@ -158,13 +203,11 @@ namespace B.A.S.S.Controllers
                                         StopChangeTwo = 0.60 + StopChange;
                                     }
                                     double StopChangeThree = 0.60 - StopChangeTwo;
-                                    TimeFrames.StopTime -= StopChangeThree;
+                                    TimeFrames.StopTime -= Math.Round(StopChangeThree);
                                 }
                             }
-                            EditModel.ID += 1;
                         }
                     }
-                    EditModel.ID += 1;
                     TimeFrames = await _contexttwo.Stops.FindAsync(EditModel.ID);
                 }
 
@@ -182,6 +225,18 @@ namespace B.A.S.S.Controllers
             {
                 _contexttwo.Stops.Remove(Stops);
                 await _contexttwo.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> TimeTableDelete(RouteController DeleteModel)
+        {
+            var Routes = await _context.RouteController.FindAsync(DeleteModel.RouteID);
+            if (Routes != null)
+            {
+                _context.RouteController.Remove(Routes);
+                await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
@@ -272,6 +327,7 @@ namespace B.A.S.S.Controllers
                 BusDriverDOB = NewBus.BusDriverDOB,
                 BusDriverStartShift = NewBus.BusDriverStartShift,
                 BusDriverEndShift = NewBus.BusDriverEndShift,
+               IncidentMessage = none
             };
             await _contextthree.AddAsync(Buses);
             await _contextthree.SaveChangesAsync();
@@ -291,6 +347,8 @@ namespace B.A.S.S.Controllers
                 RouteName = NewRoute.RouteName,
                 RouteNumber = NewRoute.RouteNumber,
                 RouteDescription = NewRoute.RouteDescription,
+                RouteDirection = NewRoute.RouteDirection,
+                Colour = NewRoute.Colour
             };
 
             await _context.AddAsync(Routes);
@@ -348,6 +406,7 @@ namespace B.A.S.S.Controllers
 
                 TimeFrames.StopTime += 0.30;
                 double Latetime = 0.30 * 100;
+                Latetime = Math.Round(Latetime, 2);
                 RouteFrame.LateTime = RouteFrame.LateTime + Latetime;
                 while (TimeFrames != null)
                 {
@@ -408,6 +467,7 @@ namespace B.A.S.S.Controllers
             }
             if (TimeFrames != null)
             {
+                TimeFrames.StopTime = Math.Round(TimeFrames.StopTime, 2);
                 double StopChange = TimeFrames.StopTime - TimeSave;
                 double Latetime = StopChange * 100;
                 RouteFrame.LateTime = RouteFrame.LateTime + Latetime;
@@ -448,6 +508,54 @@ namespace B.A.S.S.Controllers
             await _contexttwo.SaveChangesAsync();
             await _context.SaveChangesAsync();
             return RedirectToAction("BusIndex");
+        }
+        public IActionResult Alerts()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Alerts(BusController MessageBus)
+        {
+            var Buses = await _contextthree.BusController.FindAsync(MessageBus.BusDriverID);
+            if (Buses != null)
+            {
+                Buses.IncidentMessage = MessageBus.IncidentMessage;
+            }
+            await _contextthree.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> BusDetails(BusController MessageBus)
+        {
+            
+            return RedirectToAction("BusIndex");
+        }
+        public IActionResult Search()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Search(StopController stops)
+        {   
+            int i = 0;
+            var TimeFrames = await _contexttwo.Stops.ToListAsync();
+            while (TimeFrames != null)
+            {
+                if (TimeFrames[i].StopName == stops.StopName)
+                {
+                    TempData["RouteDescription"] = TimeFrames[i].RouteDescription.ToString();
+                    return RedirectToAction("SearchIndex");
+
+                }
+            }
+            return RedirectToAction("SearchIndex");
+        }
+        public async Task<IActionResult> SearchIndex()
+        {
+            string RouteID = TempData["RouteDescription"].ToString();
+            return View(await _context.RouteController.Where(i => i.RouteDescription == RouteID).ToListAsync());
         }
         public IActionResult Privacy()
         {

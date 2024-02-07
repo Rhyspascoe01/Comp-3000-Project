@@ -1,0 +1,24 @@
+﻿@model B.A.S.S.Models.BusController
+@{
+    ViewData["Title"] = "Alert Report";
+}
+@using (Html.BeginForm()){
+<div class="text-center">
+    <h1 class="display-4">Alert Sender.</h1>
+    <p>Insert the ID of thr driver and the incident message and send them a alert.</p>
+</div>
+    <div class="container">
+        <div class="text-center">
+           <p class="form-control">
+            <label >Insert Stop ID</label>
+                @Html.TextBoxFor(x => x.BusDriverID, new {@class = "form-control"  })
+             </p>
+            <p class="form-control">
+                <label>Insert IncidentID</label>
+                @Html.TextBoxFor(x => x.IncidentMessage ,new {@class = "form-control"  })
+            </p>
+            <button class="btn btn-md btn-primary" type="submit">Send Alert</button>
+
+        </div>
+    </div>
+}

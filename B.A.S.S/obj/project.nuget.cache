@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bBa1vxzUZZ5yFhZc6fI38P/q8sxU9GVvbG5VC2Tbml7mwrMo1+TJfRStsoTQxt2khUhT3SQx5bY5CgvaHLdvMw==",
+  "dgSpecHash": "ScCwC000jfK3p4MBTYTxxXAe/fv87y52//m8yyZlJMerxt2uP6Yfork/LRYFhcv/4JloBvEQGr+FjIi5CKLM8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pasco\\source\\repos\\B.A.S.S\\B.A.S.S\\B.A.S.S.csproj",
+  "projectFilePath": "C:\\Users\\pasco\\Comp-3000-Project\\B.A.S.S\\B.A.S.S.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pasco\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\pasco\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

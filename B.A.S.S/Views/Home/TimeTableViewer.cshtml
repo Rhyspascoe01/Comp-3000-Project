@@ -15,7 +15,7 @@
         <thead>
             <tr>
                   @foreach (var item in Model){
-                    <td >@item.RouteName</td>
+                    <td style="background-color : @ViewData["Colour"] ">@item.RouteName</td>
                 }
             </tr>
         </thead>
@@ -43,4 +43,5 @@
            
         </tbody>
     </table>
+
 </div>

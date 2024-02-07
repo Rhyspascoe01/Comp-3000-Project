@@ -12,6 +12,7 @@
                  <tr><th>Name</th>
                 <th>Start of Shift</th>
                 <th>End of Shift</th>
+                <th>Assigned Route</th>
             </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                         <td>@item.BusDriverName</td>
                         <td>@item.BusDriverStartShift</td>
                         <td>@item.BusDriverEndShift</td>
+                        <td>@item.RouteID</td>
                         <a asp-area="" asp-controller="Home" asp-action="AbsenceReport" class="btn btn-md btn-primary">Report Absence</a>
                         <a asp-area="" asp-controller="Home" asp-action="IncidentReporter" class="btn btn-md btn-primary">Report A Incident</a>
 
@@ -29,5 +31,10 @@
             </tbody>
         </table>
         <a asp-area="" asp-controller="Home" asp-action="BusIndex" class="btn btn-md btn-primary">Go To TimeTables</a>
-        </div>
+          @foreach (var item in Model)
+        {
+            <p>Alert Messages :@item.IncidentMessage </p>
+           
+        }
+    </div>
 </div>

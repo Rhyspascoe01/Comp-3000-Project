@@ -22,6 +22,10 @@ namespace B.A.S.S.Models
         public string RouteDescription { get; set; } = string.Empty;
         public string RouteDirection { get; set; } = string.Empty;
 
+        public string Colour { get; set; } = string.Empty;
+        public string RunningSummary { get; set; } = string.Empty;
+
+
         public double LateTime { get; set; }
     }
 }

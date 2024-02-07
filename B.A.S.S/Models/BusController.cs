@@ -22,7 +22,9 @@ namespace B.A.S.S.Models
 
         public string BusDriverDOB { get; set; } = string.Empty;
         public double BusDriverStartShift { get; set; }
-        public double BusDriverEndShift { get; set; } 
+        public double BusDriverEndShift { get; set; }
+
+        public string IncidentMessage { get; set; } = string.Empty;
 
     }
 }
